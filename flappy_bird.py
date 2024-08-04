@@ -19,7 +19,7 @@ def main(stdscr):
 
     def create_wall():
         height = random.randint(1, sh - 2)
-        return (height, sw)
+        return [height, sw]  # Use a list instead of a tuple
 
     for _ in range(5):
         walls.append(create_wall())
