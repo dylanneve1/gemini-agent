@@ -1,0 +1,1 @@
+Agent Name: Self-Aware Agent, Version: 1.0, Attributes: ['introspect', 'name', 'test_self_awareness', 'version'], Methods: ['introspect', 'test_self_awareness']
