@@ -39,7 +39,7 @@ def tic_tac_toe():
                     break
                 elif np.all(board != ' '):
                     display_board(board)
-                    print('It's a draw!')
+                    print("It's a draw!")
                     break
                 player = 'O' if player == 'X' else 'X'
             else:
