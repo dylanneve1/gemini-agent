@@ -1,0 +1,2 @@
+Agent Name: Introspective Agent
+Version: 1.0
