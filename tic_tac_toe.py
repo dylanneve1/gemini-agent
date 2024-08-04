@@ -27,6 +27,9 @@ def tic_tac_toe():
         display_board(board)
         try:
             row, col = map(int, input(f'Player {player}, enter row and column (0, 1, or 2): ').split())
+            if row < 0 or row > 2 or col < 0 or col > 2:
+                print('Invalid row or column! Please enter values between 0 and 2.')
+                continue
             if board[row][col] == ' ':
                 board[row][col] = player
                 winner = check_winner(board)
@@ -41,6 +44,6 @@ def tic_tac_toe():
                 player = 'O' if player == 'X' else 'X'
             else:
                 print('Cell already taken!')
-        except (IndexError, ValueError):
+        except ValueError:
             print('Invalid input! Please enter row and column as two numbers separated by space.')
 tic_tac_toe()
