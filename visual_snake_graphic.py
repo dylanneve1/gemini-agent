@@ -1,4 +1,3 @@
-
 sh, sw = 20, 40  # Static height and width for the graphic
 snake = [[sh//2, sw//4], [sh//2, sw//4-1], [sh//2, sw//4-2]]
 
@@ -11,6 +10,6 @@ for segment in snake:
     board[y][x] = 'O'  # Use 'O' to represent the snake
 
 # Create a string representation of the board
-graphic = '
-'.join([''.join(row) for row in board])
+graphic = '\n'.join([''.join(row) for row in board])
 print(graphic)
+
