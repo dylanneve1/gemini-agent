@@ -15,15 +15,24 @@ def main(stdscr):
     bird = 'o'
     game_over = False
     walls = []
+    wall_speed = 1
 
-    for i in range(5):
+    def create_wall():
         height = random.randint(1, sh - 2)
-        walls.append((height, sw + i * 20))
+        return (height, sw)
+
+    for _ in range(5):
+        walls.append(create_wall())
 
     while not game_over:
         w.clear()
 
         for wall in walls:
+            # Move wall towards the bird
+            wall[1] -= wall_speed
+            if wall[1] < 1:
+                walls.remove(wall)
+                score += 1  # Increment score for passing a wall
             if wall[1] < sw and wall[0] < sh:
                 w.addstr(wall[0], wall[1], '|')
                 if wall[1] == bird_x:
@@ -33,8 +42,6 @@ def main(stdscr):
         if bird_y < sh and bird_y >= 0:
             w.addstr(bird_y, bird_x, bird)
 
-        if random.randint(0, 20) == 0:
-            score += 1
         w.addstr(0, 2, f'Score: {score}')
         w.refresh()
 
@@ -45,6 +52,10 @@ def main(stdscr):
             bird_y += 1
         if key == ord('q'):
             break
+
+        # Generate new wall
+        if len(walls) < 5:
+            walls.append(create_wall())
 
     curses.endwin()
 
