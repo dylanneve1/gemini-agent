@@ -1,3 +1,0 @@
-This is a sample text file.
-It contains a few lines of text to demonstrate the summarization function.
-Let's see how many words and lines it has.
