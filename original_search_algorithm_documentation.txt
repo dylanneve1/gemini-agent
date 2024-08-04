@@ -1,0 +1,11 @@
+
+        Original Search Algorithm
+        -------------------------
+        This algorithm searches for a target value in a list of data.
+        It returns the indices of all occurrences of the target value.
+
+        Usage:
+        1. Initialize the algorithm with a list of data.
+        2. Call the search method with the target value.
+        3. The method returns a list of indices where the target is found.
+        
