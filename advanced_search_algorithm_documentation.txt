@@ -1,0 +1,11 @@
+
+        Advanced Search Algorithm
+        -------------------------
+        This algorithm implements a binary search method for sorted data.
+        It returns the index of the target value if found, otherwise -1.
+
+        Usage:
+        1. Initialize the algorithm with a sorted list of data.
+        2. Call the binary_search method with the target value.
+        3. The method returns the index of the target or -1 if not found.
+        
