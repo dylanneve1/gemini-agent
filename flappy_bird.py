@@ -17,19 +17,21 @@ def main(stdscr):
     walls = []
 
     for i in range(5):
-        height = random.randint(1, sh - 1)
+        height = random.randint(1, sh - 2)
         walls.append((height, sw + i * 20))
 
     while not game_over:
         w.clear()
 
         for wall in walls:
-            w.addstr(0, wall[1], '|')
-            if wall[1] == bird_x:
-                if bird_y == wall[0]:
-                    game_over = True
+            if wall[1] < sw and wall[0] < sh:
+                w.addstr(wall[0], wall[1], '|')
+                if wall[1] == bird_x:
+                    if bird_y == wall[0]:
+                        game_over = True
 
-        w.addstr(bird_y, bird_x, bird)
+        if bird_y < sh and bird_y >= 0:
+            w.addstr(bird_y, bird_x, bird)
 
         if random.randint(0, 20) == 0:
             score += 1
